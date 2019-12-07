@@ -22,7 +22,7 @@ static int nump2(0), numh2(0), nume2(0), nums2(0), goalline2(6500);
 static int nump3(0), numh3(0), nume3(0), nums3(0), goalline3(5000);
 static double xx(-360), yy, vp(50), j(0), dt(0), jdt(0.005), n(0), ve(10), xkusa(0), jumppower1(450.0), jumpa(-8.0), vj(jumppower1), dvj(0), goaldown(0);
 
-//‘ä‚ğì¬‚·‚éƒNƒ‰ƒX‚ÌéŒ¾BƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Ìˆø”‚Æ‚µ‚ÄAn‚Ü‚è‚ÌÀ•WAI‚í‚è‚ÌÀ•WAã•Ó‚Ì‚‚³A‰º•Ó‚Ì‚‚³AÔF‚Ì“x‡‚¢‚Ì’l‚Ì‚T‚Â‚Æ‚µ‚½BA
+//å°ã‚’ä½œæˆã™ã‚‹ã‚¯ãƒ©ã‚¹ã®å®£è¨€ã€‚ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã®å¼•æ•°ã¨ã—ã¦ã€å§‹ã¾ã‚Šã®åº§æ¨™ã€çµ‚ã‚ã‚Šã®åº§æ¨™ã€ä¸Šè¾ºã®é«˜ã•ã€ä¸‹è¾ºã®é«˜ã•ã€èµ¤è‰²ã®åº¦åˆã„ã®å€¤ã®ï¼•ã¤ã¨ã—ãŸã€‚ã€
 class plate {
 public:
 	double px1, px2, high, low, color;
@@ -30,7 +30,7 @@ public:
 	void platedraw();
 };
 
-//‘ä‚ğì¬‚·‚éƒRƒ“ƒXƒgƒ‰ƒNƒ^
+//å°ã‚’ä½œæˆã™ã‚‹ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 plate::plate(double cpx1, double cpx2, double chigh, double clow, double ccolor) {
 	px1 = cpx1;
 	px2 = cpx2;
@@ -39,7 +39,7 @@ plate::plate(double cpx1, double cpx2, double chigh, double clow, double ccolor)
 	color = ccolor;
 }
 
-//‘ä‚ğ•`‚­ƒƒ“ƒoŠÖ”B—§‘Ì“I‚ÉŒ©‚¦‚é‚æ‚¤‚É‰œs‚«‚ğo‚µ‚½
+//å°ã‚’æããƒ¡ãƒ³ãƒé–¢æ•°ã€‚ç«‹ä½“çš„ã«è¦‹ãˆã‚‹ã‚ˆã†ã«å¥¥è¡Œãã‚’å‡ºã—ãŸ
 void plate::platedraw() {
 	using namespace SDGLibF;
 	px1 -= dt*vp; px2 -= dt*vp;
@@ -65,7 +65,7 @@ void plate::platedraw() {
 	DrawLine(1.0, px1 + 20, high - 300 + 15, px2 + 20, -300 + high + 15);
 }
 
-//ŒŠ‚ğì¬‚·‚éƒNƒ‰ƒX‚ÌéŒ¾BƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Ìˆø‚«”‚Æ‚µ‚Än‚Ü‚è‚ÌÀ•W‚ÆI‚í‚è‚ÌÀ•W‚Ì‚Q‚Â‚ğ—^‚¦‚é
+//ç©´ã‚’ä½œæˆã™ã‚‹ã‚¯ãƒ©ã‚¹ã®å®£è¨€ã€‚ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã®å¼•ãæ•°ã¨ã—ã¦å§‹ã¾ã‚Šã®åº§æ¨™ã¨çµ‚ã‚ã‚Šã®åº§æ¨™ã®ï¼’ã¤ã‚’ä¸ãˆã‚‹
 class hole {
 public:
 	double hx1, hx2;
@@ -73,13 +73,13 @@ public:
 	void holedraw();
 };
 
-//ŒŠ‚ğì¬‚·‚éƒRƒ“ƒXƒgƒ‰ƒNƒ^
+//ç©´ã‚’ä½œæˆã™ã‚‹ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 hole::hole(double chx1, double chx2) {
 	hx1 = chx1;
 	hx2 = chx2;
 }
 
-//ŒŠ‚ğ•`‚­ƒƒ“ƒoŠÖ”
+//ç©´ã‚’æããƒ¡ãƒ³ãƒé–¢æ•°
 void hole::holedraw() {
 	SetColor(0, 0, 0);
 	hx1 -= dt*vp; hx2 -= dt*vp;
@@ -88,7 +88,7 @@ void hole::holedraw() {
 	}
 }
 
-//“G‚ğì¬‚·‚éƒNƒ‰ƒX‚ÌéŒ¾
+//æ•µã‚’ä½œæˆã™ã‚‹ã‚¯ãƒ©ã‚¹ã®å®£è¨€
 class enemy {
 public:
 	double ex;
@@ -96,35 +96,35 @@ public:
 	void enemydraw();
 };
 
-//“G‚ğì¬‚·‚éƒRƒ“ƒXƒgƒ‰ƒNƒ^
+//æ•µã‚’ä½œæˆã™ã‚‹ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 enemy::enemy(double cex) {
 	ex = cex;
 }
 
-//“G‚ğ•`‚­ƒƒ“ƒoŠÖ”
+//æ•µã‚’æããƒ¡ãƒ³ãƒé–¢æ•°
 void enemy::enemydraw() {
 	SetColor(0, 0, 0);
 	ex -= vp*dt + ve*dt;
 	/*for (int i(0); i <= 10; i += 2) {
 	DrawCircle(2, ex, -295, i);
 	}*/
-	SetColor(0.7, 0, 0);//Šç
+	SetColor(0.7, 0, 0);//é¡”
 	for (int i(0); i <= 17; i++) {
 		DrawLine(1, ex, -280, ex - 8.5 + i, -293);
 	}
 	SetColor(0, 0, 0);
-	for (int i(0); i <= 2; i += 1) {//¶–Ú
+	for (int i(0); i <= 2; i += 1) {//å·¦ç›®
 		DrawCircle(1, ex - 3, -287, i);
 	}
-	for (int i(0); i <= 2; i += 1) {//‰E–Ú
+	for (int i(0); i <= 2; i += 1) {//å³ç›®
 		DrawCircle(1, ex + 3, -287, i);
 	}
-	//”û–Ñ
+	//çœ‰æ¯›
 	DrawLine(1, ex - 1, -288, ex - 4, -284);
 	DrawLine(1, ex + 1, -288, ex + 4, -284);
 }
 
-//ƒXƒ^[‚ğì¬‚·‚éƒNƒ‰ƒX‚ÌéŒ¾
+//ã‚¹ã‚¿ãƒ¼ã‚’ä½œæˆã™ã‚‹ã‚¯ãƒ©ã‚¹ã®å®£è¨€
 class star {
 public:
 	double sx, sy;
@@ -132,13 +132,13 @@ public:
 	void stardraw();
 };
 
-//ƒXƒ^[‚ğì¬‚·‚éƒRƒ“ƒXƒgƒ‰ƒNƒ^
+//ã‚¹ã‚¿ãƒ¼ã‚’ä½œæˆã™ã‚‹ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 star::star(double csx, double csy) {
 	sx = csx;
 	sy = csy;
 }
 
-//ƒXƒ^[‚ğ•`‚­ƒƒ“ƒoŠÖ”
+//ã‚¹ã‚¿ãƒ¼ã‚’æããƒ¡ãƒ³ãƒé–¢æ•°
 void star::stardraw() {
 	sx -= vp*dt;
 	SetColor(8 / 10.0, 8 / 10.0, 0);
@@ -149,7 +149,7 @@ void star::stardraw() {
 	DrawLine(2, sx, sy + 6, sx + 3, sy - 3 * sqrt(3));
 }
 
-//‚±‚±‚©‚çƒNƒ‰ƒX‚Å’è‹`‚µ‚½‘ä‚ÆŒŠ‚Æ“G‚ÆƒXƒ^[‚ÌƒIƒuƒWƒFƒNƒg‚ğì¬‚µ‚½B”z—ñ‚Åì¬‚·‚é‚±‚Æ‚É‚æ‚Á‚ÄAƒƒ“ƒoŠÖ”‚ğŒÄ‚Ño‚·èŠÔ‚ğŒ¸‚ç‚µ‚½B‚Ü‚½A”z—ñ‚ÌŒÂ”‚ğsizeofŠÖ”‚ğg‚Á‚Ä”‚¦‚é‚±‚Æ‚É‚æ‚èBƒIƒuƒWƒFƒNƒg‚ğ•t‚¯‰Á‚¦‚½‚èŒ¸‚ç‚µ‚½‚è‚·‚é‚Æ‚«‚É‚Ù‚©‚Ì•Ï”‚à©“®“I‚É•ÏX‚³‚ê‚é‚æ‚¤‚É‚µ‚½B
+//ã“ã“ã‹ã‚‰ã‚¯ãƒ©ã‚¹ã§å®šç¾©ã—ãŸå°ã¨ç©´ã¨æ•µã¨ã‚¹ã‚¿ãƒ¼ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆã—ãŸã€‚é…åˆ—ã§ä½œæˆã™ã‚‹ã“ã¨ã«ã‚ˆã£ã¦ã€ãƒ¡ãƒ³ãƒé–¢æ•°ã‚’å‘¼ã³å‡ºã™æ‰‹é–“ã‚’æ¸›ã‚‰ã—ãŸã€‚ã¾ãŸã€é…åˆ—ã®å€‹æ•°ã‚’sizeofé–¢æ•°ã‚’ä½¿ã£ã¦æ•°ãˆã‚‹ã“ã¨ã«ã‚ˆã‚Šã€‚ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä»˜ã‘åŠ ãˆãŸã‚Šæ¸›ã‚‰ã—ãŸã‚Šã™ã‚‹ã¨ãã«ã»ã‹ã®å¤‰æ•°ã‚‚è‡ªå‹•çš„ã«å¤‰æ›´ã•ã‚Œã‚‹ã‚ˆã†ã«ã—ãŸã€‚
 plate platen[] = { plate(-200,-70,50,0,1), plate(100, 250, 50, 40, 0.7),plate(180, 280, 100, 90, 0.8),plate(280,500,150,140,1),plate(600,700,40, 0, 0.9),plate(700,900,10, 0, 1),plate(1000,1100,30, 0, 0.5),
 plate(1100, 1200,60, 0, 0.3), plate(1200, 1300,90, 0, 0.2),plate(1300, 1400,120, 0, 0.3), plate(1400, 1500,150, 0, 0.4),plate(1500,1600,180, 0, 0.7),
 plate(1600,1700,210, 0, 0.8),plate(1700,1800,240, 0, 0.9),plate(1800,2100,80, 0, 0.5),plate(3000,3100,20, 0, 0.5) ,plate(3100,3200,30, 0, 0.5) ,
@@ -160,7 +160,7 @@ plate(1550,1600,180,170,0.8),plate(2100,2200,40,0,0.7),plate(2300,2400,40,0,0.6)
 plate(3500,3600,30,0,0.1),plate(3600,3700,60,0,1),plate(3700,3800,90,0,1),plate(3800,3900,120,0,1),plate(3900,4000,150,0,1),plate(4000,4100,180,0,1),plate(4100,4200,210,0,1), };
 
 plate platen3[] = { plate(0,30,50,0,1), plate(240,250,170,160,0.6), plate(190,250,130,120,1), plate(70,250,70,60,1), plate(60,420,30,20,0.8), plate(320,370,90,80,0.7), plate(420,490,140,130,0.4), plate(470,480,60,50,0.7), plate(530,540,50,0,1), plate(530,630,140,130,9.9), plate(650,660,50,40,0.6), plate(730,740,50,40,0.2), plate(820,830,50,40,0.8), plate(650,890,140,130,0.7), plate(880,1170,190,180,0.7), 
-plate(1070,1150,20,10,0.7), plate(1220,1300,60,50,1), plate(1370,1450,100,90,1), plate(1520,1600,140,130,0.9), plate(1670,1750,180,170,0.9), plate(1820,1900,220,210,0.8), plate(1970,2050,250,240,0.8), plate(2120,2200,280,270,0.7), plate(2270,2350,310,300,0.6), plate(2420,2500,340,330,0.8)//‚±‚Ìs‚Í‘åŠK’i1070`2040
+plate(1070,1150,20,10,0.7), plate(1220,1300,60,50,1), plate(1370,1450,100,90,1), plate(1520,1600,140,130,0.9), plate(1670,1750,180,170,0.9), plate(1820,1900,220,210,0.8), plate(1970,2050,250,240,0.8), plate(2120,2200,280,270,0.7), plate(2270,2350,310,300,0.6), plate(2420,2500,340,330,0.8)//ã“ã®è¡Œã¯å¤§éšæ®µ1070ã€œ2040
 ,plate(1850,2050,40,35,1),plate(3000,3400,50,0,0.8), plate(3600,3700,60,0,1),plate(3700,3800,90,0,1),plate(3800,3900,120,0,0.8) };
 
 hole holen[] = { hole(330,380),hole(920,950),hole(2800,2850) };
@@ -180,26 +180,26 @@ star(1810,90),star(1810,90 - 300), star(1810,90 - 300) };
 
 star starn3[] = { star(200,40 - 300) ,star(3000,60 - 300) ,star(3300,60 - 300), star(3100,60 - 300), star(3200,60 - 300),star(1070,-260),star(1220,-220),star(1370,-180),star(1520,-150),star(1680,-110),star(1730,-70),star(1880,-30),star(4000,-260),star(4300,-260), star(4500,-260) ,star(4400,-260), star(3800,-260) ,star(3900,-260) };
 
-//ƒIƒuƒWƒFƒNƒg‚ğƒƒ“ƒoŠÖ”‚ğg‚Á‚Ä•`Ê‚·‚éŠÖ”
+//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ãƒ¡ãƒ³ãƒé–¢æ•°ã‚’ä½¿ã£ã¦æå†™ã™ã‚‹é–¢æ•°
 void Draw(plate p[], hole h[], enemy e[], star s[], double goalline, int np, int nh, int ne, int ns) {
 	SetColor(0, 1, 0);
-	for (int i(0); i < np; i++) {//‘ä‚Ì•`Ê
+	for (int i(0); i < np; i++) {//å°ã®æå†™
 		p[i].platedraw();
 	}
 
-	for (int i(0); i < nh; i++) {//ŒŠ‚Ì•`Ê
+	for (int i(0); i < nh; i++) {//ç©´ã®æå†™
 		h[i].holedraw();
 	}
 
-	for (int i(0); i < ne; i++) {//“G‚Ì•`Ê
+	for (int i(0); i < ne; i++) {//æ•µã®æå†™
 		e[i].enemydraw();
 	}
 
-	for (int i(0); i < ns; i++) {//ƒXƒ^[‚Ì•`Ê
+	for (int i(0); i < ns; i++) {//ã‚¹ã‚¿ãƒ¼ã®æå†™
 		s[i].stardraw();
 	}
 
-	SetColor(1, 0, 0);//ƒS[ƒ‹‚Ì•`Ê
+	SetColor(1, 0, 0);//ã‚´ãƒ¼ãƒ«ã®æå†™
 	DrawLine(2.0, goalline - n - 360, -300, goalline - n - 360, 200);
 	for (int i(0); i < 50; i++) {
 		DrawLine(1.0, goalline - n - 400, 175 + goaldown, goalline - n - 360, 150 + i + goaldown);
@@ -207,7 +207,7 @@ void Draw(plate p[], hole h[], enemy e[], star s[], double goalline, int np, int
 }
 
 void Drawscene() {
-	//’n–Ê‚Æ‘‚Ì•`Ê
+	//åœ°é¢ã¨è‰ã®æå†™
 	SetColor(149.0 / 204, 65.0 / 204, 28.0 / 204);
 	for (int i(10); i <= 100; i++) {
 		DrawLine(1.0, -400, -300 - i, 400, -300 - i);
@@ -227,21 +227,21 @@ void Drawscene() {
 }
 
 void DrawHuman() {
-	SetColor(0.0, 0.0, 1.0);//‘–‚élŠÔ‚Ì•`Ê
-	for (double i(0); i < 2.5; i += 0.5) {//Šç
+	SetColor(0.0, 0.0, 1.0);//èµ°ã‚‹äººé–“ã®æå†™
+	for (double i(0); i < 2.5; i += 0.5) {//é¡”
 		DrawCircle(1, xx, yy + 7.5, i);
 	}
-	DrawLine(1, xx, yy + 5, xx, yy - 5);//“·‘Ì
-	DrawLine(1, xx - 7, yy + 3, xx + 7, yy + 3);//Œ¨
-	DrawLine(1, xx - 7, yy + 3, xx - 7, yy);//è
-	DrawLine(1, xx + 7, yy + 6, xx + 7, yy + 3);//è
-	DrawLine(1, xx - 5, yy - 7, xx, yy - 5);//¶‘«
+	DrawLine(1, xx, yy + 5, xx, yy - 5);//èƒ´ä½“
+	DrawLine(1, xx - 7, yy + 3, xx + 7, yy + 3);//è‚©
+	DrawLine(1, xx - 7, yy + 3, xx - 7, yy);//æ‰‹
+	DrawLine(1, xx + 7, yy + 6, xx + 7, yy + 3);//æ‰‹
+	DrawLine(1, xx - 5, yy - 7, xx, yy - 5);//å·¦è¶³
 	DrawLine(1, xx - 5, yy - 7, xx - 8, yy - 7);
-	DrawLine(1, xx, yy - 5, xx + 5, yy - 5);//‰E‘«
+	DrawLine(1, xx, yy - 5, xx + 5, yy - 5);//å³è¶³
 	DrawLine(1, xx + 7, yy - 7, xx + 5, yy - 5);
 }
 
-//“_”‚ğ•\¦‚³‚¹‚éŠÖ”
+//ç‚¹æ•°ã‚’è¡¨ç¤ºã•ã›ã‚‹é–¢æ•°
 void DrawScore() {
 	stringstream points;
 	points << "Score : " << point;
@@ -249,16 +249,16 @@ void DrawScore() {
 	DrawString(300, 250, points.str());
 }
 
-//ƒWƒƒƒ“ƒv‚·‚é‚Æ‚«‚ÉŒÄ‚Ño‚³‚ê‚éŠÖ”
+//ã‚¸ãƒ£ãƒ³ãƒ—ã™ã‚‹ã¨ãã«å‘¼ã³å‡ºã•ã‚Œã‚‹é–¢æ•°
 void jampup(plate b[], int np, int jumppower) {
 	vj += jumpa;
 	j += vj*jdt;
-	if (j <= 0) {//’n–Ê‚É‚Â‚¢‚½‚ÌğŒ
+	if (j <= 0) {//åœ°é¢ã«ã¤ã„ãŸæ™‚ã®æ¡ä»¶
 		act = 0;
 		vj = jumppower;
 		j = 0;
 	}
-	for (int i(0); i < np; i++) {//ƒWƒƒƒ“ƒv‚Å‘ä‚Éæ‚é
+	for (int i(0); i < np; i++) {//ã‚¸ãƒ£ãƒ³ãƒ—ã§å°ã«ä¹—ã‚‹
 		if (b[i].px1 < xx && b[i].px2>xx && j < b[i].high&& j>b[i].low + 2) {
 			j = b[i].high;
 			act = 0;
@@ -267,7 +267,7 @@ void jampup(plate b[], int np, int jumppower) {
 	}
 }
 
-void drop() {//ŒŠ‚©‚ç—‚¿‚é‚Æ‚«‚ÉŒÄ‚Ño‚³‚ê‚éŠÖ”
+void drop() {//ç©´ã‹ã‚‰è½ã¡ã‚‹ã¨ãã«å‘¼ã³å‡ºã•ã‚Œã‚‹é–¢æ•°
 	dvj += jumpa;
 	j += dvj*dt;
 	if (j <= -100) {
@@ -276,51 +276,51 @@ void drop() {//ŒŠ‚©‚ç—‚¿‚é‚Æ‚«‚ÉŒÄ‚Ño‚³‚ê‚éŠÖ”
 }
 
 void condition(plate p[], hole h[], enemy e[], star s[], double goalline, int np, int nh, int ne, int ns) {
-	for (int i(0); i < nh; i++) {//ŒŠ‚É—‚¿‚é‚©‚Ì”»’è
+	for (int i(0); i < nh; i++) {//ç©´ã«è½ã¡ã‚‹ã‹ã®åˆ¤å®š
 		if (j == 0 && h[i].hx1 < xx && h[i].hx2>xx) {
 			act = 2;
 		}
 	}
 
-	for (int i(0); i < np; i++) {//‘ä‚©‚ç‚Ó‚ñ‚í‚è~‚è‚é
+	for (int i(0); i < np; i++) {//å°ã‹ã‚‰ãµã‚“ã‚ã‚Šé™ã‚Šã‚‹
 		if (j == p[i].high&&xx >= p[i].px2&&xx <= p[i].px2 + 1) {
 			act = 1;
 			vj = 0;
 		}
 	}
 
-	for (int i(0); i < np; i++) {//‘ä‚É‰º‚ç‚Ô‚Â‚©‚é‚Æ’µ‚Ë•Ô‚é
+	for (int i(0); i < np; i++) {//å°ã«ä¸‹ã‚‰ã¶ã¤ã‹ã‚‹ã¨è·³ã­è¿”ã‚‹
 		if (p[i].px1 < xx && p[i].px2>xx && p[i].low <= j + 20 && p[i].low > j + 19) {
 			vj = -vj;
 		}
 	}
 
-	for (int i(0); i < np; i++) {//ƒWƒƒƒ“ƒv‚Å•Ç‚É“–‚½‚é‚©”»’è
+	for (int i(0); i < np; i++) {//ã‚¸ãƒ£ãƒ³ãƒ—ã§å£ã«å½“ãŸã‚‹ã‹åˆ¤å®š
 		if (p[i].px1 == -350 && j <= p[i].high && j + 20 >= p[i].low) {
 			act = 100;
 		}
 	}
 
-	for (int i(0); i < ne; i++) {//“G‚É“–‚½‚é‚©‚Ç‚¤‚©‚Ì”»’è
+	for (int i(0); i < ne; i++) {//æ•µã«å½“ãŸã‚‹ã‹ã©ã†ã‹ã®åˆ¤å®š
 		if ((e[i].ex + 360)*(e[i].ex + 360) + (5 + j)*(5 + j) <= 400) {
 			act = 100;
 		}
 	}
 
-	for (int i(0); i < ns; i++) {//¯‚É“–‚½‚Á‚½‚ç¯‚ªÁ‚¦“¾“_ƒAƒbƒv
+	for (int i(0); i < ns; i++) {//æ˜Ÿã«å½“ãŸã£ãŸã‚‰æ˜ŸãŒæ¶ˆãˆå¾—ç‚¹ã‚¢ãƒƒãƒ—
 		if ((s[i].sx + 360)*(s[i].sx + 360) + (s[i].sy + 290 - j)*(s[i].sy + 290 - j) < 169) {
 			s[i].sy += 700;
 			point++;
 		}
 	}
 
-	if (act == 1) {//J‚ğ‰Ÿ‚µ‚½‚çƒWƒƒƒ“ƒv
+	if (act == 1) {//Jã‚’æŠ¼ã—ãŸã‚‰ã‚¸ãƒ£ãƒ³ãƒ—
 		jampup(p, np, jumppower1);
 	}
-	else if (act == 2) {//ŒŠ‚É—‚¿‚éê‡
+	else if (act == 2) {//ç©´ã«è½ã¡ã‚‹å ´åˆ
 		drop();
 	}
-	else if (act == 100) {//ƒQ[ƒ€ƒI[ƒo[‚É‚È‚éğŒ
+	else if (act == 100) {//ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ã«ãªã‚‹æ¡ä»¶
 		stringstream gameover1,gameover2,gameover3;
 		gameover1 <<"GAME OVER!  Please press R to chosse other course.";
 		gameover2 << "GAME OVER! \n Please press R to do last course.";
@@ -333,7 +333,7 @@ void condition(plate p[], hole h[], enemy e[], star s[], double goalline, int np
 		n = 0;
 	}
 
-	if (n >= goalline) {//ƒS[ƒ‹‚Å~‚Ü‚éğŒ
+	if (n >= goalline) {//ã‚´ãƒ¼ãƒ«ã§æ­¢ã¾ã‚‹æ¡ä»¶
 		stringstream goal1,goal2;
 		goal1 << "GAME CLEAR! Press R to restart";
 		goal2 << "GAME CLEAR! Your total point is " << point;
@@ -349,9 +349,9 @@ void condition(plate p[], hole h[], enemy e[], star s[], double goalline, int np
 
 void displayfunc() {
 	using namespace SDGLibF;
-	Before(); n += dt*vp;//‘S‘Ì‚ÌÀ•W
+	Before(); n += dt*vp;//å…¨ä½“ã®åº§æ¨™
 
-	//‰æ–Ê‘S‘Ì‚Ì“h‚è‚Â‚Ô‚µ
+	//ç”»é¢å…¨ä½“ã®å¡—ã‚Šã¤ã¶ã—
 	if (situation == 1) {
 		SetColor(1, 1, 0.9);
 	}
@@ -368,7 +368,7 @@ void displayfunc() {
 		DrawLine(1, -400, -400 + i, 400, -400 + i);
 	}
 
-	//ƒQ[ƒ€‚ªn‚Ü‚Á‚½‚Ì‰æ–Ê‚Ì•`Ê
+	//ã‚²ãƒ¼ãƒ ãŒå§‹ã¾ã£ãŸæ™‚ã®ç”»é¢ã®æå†™
 	if (situation == 0) {
 		SetColor(1, 1, 1);
 		stringstream game, startword1, startword2, startword3;
@@ -383,36 +383,36 @@ void displayfunc() {
 		DrawString(-160, -250, startword3.str());
 	}
 
-	//ƒ{[ƒ‹‚ÌˆÊ’u‚ÌŒvZ
+	//ãƒœãƒ¼ãƒ«ã®ä½ç½®ã®è¨ˆç®—
 	xx = -360;
 	yy = -290 + j;
 
-	//”wŒi‚ğ•`Ê‚·‚éŠÖ”‚ğŒÄ‚Ño‚·
+	//èƒŒæ™¯ã‚’æå†™ã™ã‚‹é–¢æ•°ã‚’å‘¼ã³å‡ºã™
 	Drawscene();
 
-	//ƒXƒ^[‚ğæ‚Á‚½‚ÌŠÖ”‚ğŒÄ‚Ño‚·
+	//ã‚¹ã‚¿ãƒ¼ã‚’å–ã£ãŸæ™‚ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã™
 	DrawScore();
 
-	//•Ï”situation‚Ì’l‚É‚æ‚Á‚ÄŒÄ‚Ño‚·ƒIƒuƒWƒFƒNƒg‚ğ•Ï‚¦‚é
+	//å¤‰æ•°situationã®å€¤ã«ã‚ˆã£ã¦å‘¼ã³å‡ºã™ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å¤‰ãˆã‚‹
 	if (situation == 1) {
-		Draw(platen, holen, enemyn, starn, goalline1, nump, numh, nume, nums);//‚·‚×‚Ä‚ÌƒIƒuƒWƒFƒNƒg‚Ì•`Ê
+		Draw(platen, holen, enemyn, starn, goalline1, nump, numh, nume, nums);//ã™ã¹ã¦ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æå†™
 		condition(platen, holen, enemyn, starn, goalline1, nump, numh, nume, nums);
 		e1 = 1;
 	}
 
 	if (situation == 2) {
-		Draw(platen2, holen2, enemyn2, starn2, goalline2, nump2, numh2, nume2, nums2);//‚·‚×‚Ä‚ÌƒIƒuƒWƒFƒNƒg‚Ì•`Ê
+		Draw(platen2, holen2, enemyn2, starn2, goalline2, nump2, numh2, nume2, nums2);//ã™ã¹ã¦ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æå†™
 		condition(platen2, holen2, enemyn2, starn2, goalline2, nump2, numh2, nume2, nums2);
 		e2 = 1;
 	}
 
 	if (situation == 3) {
-		Draw(platen3, holen3, enemyn3, starn3, goalline3, nump3, numh3, nume3, nums3);//‚·‚×‚Ä‚ÌƒIƒuƒWƒFƒNƒg‚Ì•`Ê
+		Draw(platen3, holen3, enemyn3, starn3, goalline3, nump3, numh3, nume3, nums3);//ã™ã¹ã¦ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æå†™
 		condition(platen3, holen3, enemyn3, starn3, goalline3, nump3, numh3, nume3, nums3);
 		e3 = 1;
 	}
 
-	//lŠÔ‚ğ•`‚­ŠÖ”‚ğŒÄ‚Ño‚·
+	//äººé–“ã‚’æãé–¢æ•°ã‚’å‘¼ã³å‡ºã™
 	DrawHuman();
 
 	After();
@@ -431,13 +431,13 @@ void keyboardfunc(unsigned char k, int x, int y) {
 		}
 		break;
 	case 'j':
-		//ƒWƒƒƒ“ƒv‚·‚é
+		//ã‚¸ãƒ£ãƒ³ãƒ—ã™ã‚‹
 		if (act != 100 && dt == 0.02) {
 			act = 1;
 		}
 		break;
 	case 'r':
-		//ƒŠƒXƒ^[ƒg‚·‚é
+		//ãƒªã‚¹ã‚¿ãƒ¼ãƒˆã™ã‚‹
 		if (e1 == 0 || e2 == 0 || e3 == 0) {
 			situation = 0;
 			act = 0;
@@ -452,7 +452,7 @@ void keyboardfunc(unsigned char k, int x, int y) {
 		exit(0);
 		break;
 
-	//”š‚PA‚QA‚RA‚É‚æ‚Á‚ÄƒR[ƒX‚ğ‘I‚Ô
+	//æ•°å­—ï¼‘ã€ï¼’ã€ï¼“ã€ã«ã‚ˆã£ã¦ã‚³ãƒ¼ã‚¹ã‚’é¸ã¶
 	case '1':
 		if (situation == 0 && e1 == 0) {
 			situation = 1;
@@ -476,8 +476,8 @@ void keyboardfunc(unsigned char k, int x, int y) {
 
 int main(void)
 {
-	cout << "---‘€ìà–¾---\n‰‚ß‚ÉƒR[ƒX‚ğ‚P`‚R‚Ì’†‚©‚ç‘I‚Ñ‚Ü‚·B‚»‚Ì‚ ‚Æ‚É‚“‚ğ‰Ÿ‚·‚ÆƒQ[ƒ€‚ªƒXƒ^[ƒg‚µ‚Ü‚·B‚Š‚ğ‰Ÿ‚·‚ÆƒWƒƒƒ“ƒv‚Å‚«‚Ü‚·B\nƒQ[ƒ€ƒI[ƒo[‚É‚È‚éğŒ\nEƒWƒƒƒ“ƒv‚ª“Í‚©‚¸‚É•Ç‚É“–‚½‚é\nE“G‚É‚Ô‚Â‚©‚é\nEŒŠ‚É—‚¿‚é\n\nŠeƒR[ƒX‚P`‚R‚»‚ê‚¼‚ê‚P‰ñ‚Ì‚İƒ`ƒƒƒŒƒ“ƒW‚Å‚«‚Ü‚·B\nƒ`ƒƒƒŒƒ“ƒW‚·‚é‡”Ô‚Í©—R‚Å‚·B\n‚RƒR[ƒX‚Ì‡Œv‚ÅW‚ß‚½ƒXƒ^[‚Ì”‚ªÅŒã‚É•\¦‚³‚ê‚Ü‚·BƒXƒ^[‚ğW‚ß‚È‚ª‚çƒS[ƒ‹‚ğ–Úw‚µ‚Ü‚µ‚å‚¤II\n\n";
-	//ƒIƒuƒWƒFƒNƒg‚ğ’è‹`‚µ‚½”z—ñ‚ÌŒÂ”‚ğsizeifŠÖ”‚ğg‚Á‚Ä”‚¦‚é‚±‚Æ‚É‚æ‚Á‚ÄAƒIƒuƒWƒFƒNƒg‚ğ‘‚â‚µ‚Ä‚à‚Ù‚©‚Ì•”•ª‚ğ•Ï‚¦‚È‚­‚Ä‚à‚¢‚¢‚æ‚¤‚É‚µ‚½B
+	cout << "---æ“ä½œèª¬æ˜---\nåˆã‚ã«ã‚³ãƒ¼ã‚¹ã‚’ï¼‘ã€œï¼“ã®ä¸­ã‹ã‚‰é¸ã³ã¾ã™ã€‚ãã®ã‚ã¨ã«ï½“ã‚’æŠ¼ã™ã¨ã‚²ãƒ¼ãƒ ãŒã‚¹ã‚¿ãƒ¼ãƒˆã—ã¾ã™ã€‚ï½Šã‚’æŠ¼ã™ã¨ã‚¸ãƒ£ãƒ³ãƒ—ã§ãã¾ã™ã€‚\nã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ã«ãªã‚‹æ¡ä»¶\nãƒ»ã‚¸ãƒ£ãƒ³ãƒ—ãŒå±Šã‹ãšã«å£ã«å½“ãŸã‚‹\nãƒ»æ•µã«ã¶ã¤ã‹ã‚‹\nãƒ»ç©´ã«è½ã¡ã‚‹\n\nå„ã‚³ãƒ¼ã‚¹ï¼‘ã€œï¼“ãã‚Œãã‚Œï¼‘å›ã®ã¿ãƒãƒ£ãƒ¬ãƒ³ã‚¸ã§ãã¾ã™ã€‚\nãƒãƒ£ãƒ¬ãƒ³ã‚¸ã™ã‚‹é †ç•ªã¯è‡ªç”±ã§ã™ã€‚\nï¼“ã‚³ãƒ¼ã‚¹ã®åˆè¨ˆã§é›†ã‚ãŸã‚¹ã‚¿ãƒ¼ã®æ•°ãŒæœ€å¾Œã«è¡¨ç¤ºã•ã‚Œã¾ã™ã€‚ã‚¹ã‚¿ãƒ¼ã‚’é›†ã‚ãªãŒã‚‰ã‚´ãƒ¼ãƒ«ã‚’ç›®æŒ‡ã—ã¾ã—ã‚‡ã†ï¼ï¼\n\n";
+	//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å®šç¾©ã—ãŸé…åˆ—ã®å€‹æ•°ã‚’sizeifé–¢æ•°ã‚’ä½¿ã£ã¦æ•°ãˆã‚‹ã“ã¨ã«ã‚ˆã£ã¦ã€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å¢—ã‚„ã—ã¦ã‚‚ã»ã‹ã®éƒ¨åˆ†ã‚’å¤‰ãˆãªãã¦ã‚‚ã„ã„ã‚ˆã†ã«ã—ãŸã€‚
 	nump = sizeof platen / sizeof platen[0];
 	nume = sizeof enemyn / sizeof enemyn[0];
 	nums = sizeof starn / sizeof starn[0];
