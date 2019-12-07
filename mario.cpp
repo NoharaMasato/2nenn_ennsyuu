@@ -14,6 +14,7 @@
 #include<fstream>
 #include<sstream>
 #include "sdglib.h"
+
 using namespace SDGLibF;
 using namespace std;
 static int act(0), nump(0), numh(0), nume(0), nums(0), goalline1(5000), point(0), situation(0),e1(0),e2(0),e3(0);
