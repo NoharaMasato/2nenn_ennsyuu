@@ -1,10 +1,3 @@
-///////////////////////////////////////////////////////////////////
-//                                                               //
-//         Sample Program of 2-D Graphics  sdglib.h              //
-//                 Orignal  2013/Oct/16 Nishi                    //
-//                 Modified 2013/Oct/20 Nakazawa                 //
-//                                                               //
-///////////////////////////////////////////////////////////////////
 #ifndef __sdglib_h__
 #define __sdglib_h__
 

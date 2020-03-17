@@ -1,11 +1,3 @@
-///////////////////////////////////////////////////////////////////
-//                                                               //
-//         Sample Program of 2-D Graphics  sd_2d_v1.cpp          //
-//                 Original 2013/Oct/16 Nishi                    //
-//                 Modified 2013/Oct/20 Nakazawa                 //
-//                 Modified 2015/Dec/10 Takahashi                //
-///////////////////////////////////////////////////////////////////
-
 #include <math.h>
 #include <iostream>
 #include <stdexcept>

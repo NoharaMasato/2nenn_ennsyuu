@@ -1,9 +1,14 @@
-## プログラミング演習期末課題
-C++とOpenGLを用いて作成してあります。
-プログラミング演習という授業の期末課題で作成した期末課題です。
+## Opengl_Simulation
+C++とOpenGLを用いて作成。
 
 ### コンパイル方法(Mac)
-g++ -I/opt/X11/include/ -L/usr/X11/lib -lglut -lGLU -lGL mario.cpp
+```
+g++ -I/opt/X11/include/ -L/usr/X11/lib -lglut -lGLU -lGL [cppファイル]
+```
+or
+```
+g++ -framework GLUT -framework OpenGL
+```
 
 ### 説明
 「マリオ」というものはコースが３コースあり、台を飛び飛び越えたり、敵をよけたりしてゲームをクリアしていきます。スターをたくさん集めるとポイントが高くなります。
