@@ -5,7 +5,6 @@
 #include <string.h>
 #include<fstream>
 #include<sstream>
-#include <GL/glut.h>
 #include "sdglib.h"
 #define MAX 100000
 
